@@ -7,7 +7,7 @@ import User from '../models/user';
 class MeetupController {
   async index(req, res) {
     const meetups = await Meetup.findAll({
-      where: { user_id: req.userId, canceled_at: null },
+      where: { user_id: req.userId },
       attributes: ['title', 'description', 'location', 'date'],
       order: ['date'],
       include: [
