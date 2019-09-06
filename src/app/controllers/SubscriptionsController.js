@@ -3,8 +3,8 @@ import Subscription from '../models/subscription';
 import Meetup from '../models/meetup';
 import User from '../models/user';
 
-import SubscriptionMail from '../jobs/SubscriptionMail';
 import Queue from '../../lib/Queue';
+import SubscriptionMail from '../jobs/SubscriptionMail';
 
 class SubscriptionController {
   async index(req, res) {
