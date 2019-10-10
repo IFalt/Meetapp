@@ -7,8 +7,9 @@ import SessionController from './app/controllers/SessionController';
 import FileController from './app/controllers/FIleController';
 import MeetupController from './app/controllers/MeetupController';
 
-import authMiddlewares from './app/Middlewares/auth';
 import SubscriptionsController from './app/controllers/SubscriptionsController';
+
+import authMiddlewares from './app/Middlewares/auth';
 
 const routes = new Router();
 const upload = multer(multerConfig);
