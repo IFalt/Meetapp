@@ -10,6 +10,7 @@ import {
 } from 'date-fns';
 import Meetup from '../models/meetup';
 import User from '../models/user';
+import Files from '../models/files';
 
 class MeetupController {
   async index(req, res) {
@@ -25,10 +26,9 @@ class MeetupController {
     }
     const meetups = await Meetup.findAll({
       where,
-      attributes: ['title', 'description', 'location', 'date'],
       limit: 10,
       offset: 10 * page - 10,
-      include: [User],
+      include: [User, { model: Files, as: 'imagem' }],
     });
 
     return res.json(meetups);
