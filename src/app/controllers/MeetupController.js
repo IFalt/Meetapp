@@ -28,7 +28,17 @@ class MeetupController {
       where,
       limit: 10,
       offset: 10 * page - 10,
-      include: [User, { model: Files, as: 'imagem' }],
+      include: [
+        {
+          model: User,
+          attributes: ['name', 'email'],
+        },
+        {
+          model: Files,
+          as: 'imagem',
+          attributes: ['name', 'url'],
+        },
+      ],
     });
 
     return res.json(meetups);
