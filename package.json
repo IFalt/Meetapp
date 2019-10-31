@@ -1,5 +1,5 @@
 {
-  "name": "Meetapp",
+  "name": "meetapp-backend",
   "version": "1.0.0",
   "main": "index.js",
   "author": "Juliano Krindges <juliano9krindges@hotmail.com>",
@@ -7,7 +7,9 @@
   "scripts": {
     "dev": "nodemon src/server.js",
     "queue": "nodemon src/queue.js",
-    "migrate": "yarn sequelize db:migrate"
+    "migrate": "yarn sequelize db:migrate",
+    "build": "sucrase ./src -d ./dist --transforms imports",
+    "start": "node dist/server.js"
   },
   "dependencies": {
     "@sentry/node": "5.6.2",
